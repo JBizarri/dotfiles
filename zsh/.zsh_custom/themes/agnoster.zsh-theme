@@ -143,7 +143,7 @@ prompt_end() {
   else
     echo -n "%{%k%}"
   fi
-  echo -n "\e[m\n➜%{%f%}"
+  echo -n "\e[m\n➜ %{%f%}"
   CURRENT_BG=''
 }
 
