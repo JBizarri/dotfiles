@@ -68,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(fzf git docker docker-compose poetry zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -113,3 +113,21 @@ bindkey -r "^[l"
 bindkey '^f' autosuggest-accept
 bindkey '^K' history-beginning-search-backward
 bindkey '^J' history-beginning-search-forward
+
+keep_current_path() {
+  printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+}
+precmd_functions+=(keep_current_path)
+
+PROMPT="%{$fg[cyan]%}%n%{$fg[white]%}%\@%{$FG[012]%}%m%{$reset_color%} ${PROMPT}"
+
+export DEFAULT_USER=jeff
+
+# Created by `pipx` on 2025-04-02 14:35:03
+export PATH="$PATH:/home/jeff/.local/bin"
+
+# Snap packages
+export PATH="$PATH:/snap/bin"
+
+GPG_TTY=$(tty)
+export GPG_TTY
