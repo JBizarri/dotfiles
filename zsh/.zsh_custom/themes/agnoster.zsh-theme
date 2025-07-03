@@ -51,7 +51,7 @@ esac
 
 # Current working directory
 : ${AGNOSTER_DIR_FG:=${CURRENT_FG}}
-: ${AGNOSTER_DIR_BG:=blue}
+: ${AGNOSTER_DIR_BG:=red}
 
 # user@host
 : ${AGNOSTER_CONTEXT_FG:=${CURRENT_DEFAULT_FG}}
@@ -59,7 +59,7 @@ esac
 
 # Git related
 : ${AGNOSTER_GIT_CLEAN_FG:=${CURRENT_FG}}
-: ${AGNOSTER_GIT_CLEAN_BG:=green}
+: ${AGNOSTER_GIT_CLEAN_BG:=cyan}
 : ${AGNOSTER_GIT_DIRTY_FG:=black}
 : ${AGNOSTER_GIT_DIRTY_BG:=yellow}
 
@@ -79,7 +79,7 @@ esac
 
 # VirtualEnv colors
 : ${AGNOSTER_VENV_FG:=black}
-: ${AGNOSTER_VENV_BG:=blue}
+: ${AGNOSTER_VENV_BG:=cyan}
 
 # AWS Profile colors
 : ${AGNOSTER_AWS_PROD_FG:=yellow}
