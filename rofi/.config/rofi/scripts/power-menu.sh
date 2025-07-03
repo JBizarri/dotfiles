@@ -2,7 +2,7 @@
 
 OPTIONS="Reboot\nShutdown\nSuspend\nLog off\nCancel"
 
-CHOICE=$(echo -e "$OPTIONS" | rofi -dmenu -p "Power Menu")
+CHOICE=$(echo -e "$OPTIONS" | rofi -i -dmenu -p "Power Menu")
 
 case "$CHOICE" in
     "Reboot")
