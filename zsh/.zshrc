@@ -68,8 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-
+plugins=(fzf git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -103,3 +102,17 @@ source $ZSH/oh-my-zsh.sh
 
 export TERMINAL=kitty
 export FILE_MANAGER="nautilus"
+
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR=nvim
+else
+  export EDITOR=vim
+fi
+
+export VISUAL=$EDITOR
+
+
+bindkey -r "^[l"
+bindkey '^f' autosuggest-accept
+bindkey '^K' up-line-or-search
+bindkey '^J' down-line-or-search
