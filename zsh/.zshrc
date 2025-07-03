@@ -111,5 +111,5 @@ export VISUAL=$EDITOR
 
 bindkey -r "^[l"
 bindkey '^f' autosuggest-accept
-bindkey '^K' up-line-or-search
-bindkey '^J' down-line-or-search
+bindkey '^K' history-beginning-search-backward
+bindkey '^J' history-beginning-search-forward
