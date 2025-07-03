@@ -100,9 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export TERMINAL=kitty
-export FILE_MANAGER="nautilus"
-
 if command -v nvim >/dev/null 2>&1; then
   export EDITOR=nvim
 else
