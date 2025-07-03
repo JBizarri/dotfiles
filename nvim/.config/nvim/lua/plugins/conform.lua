@@ -55,7 +55,7 @@ return {
         python = {
           'ruff_fix',
           'ruff_format',
-          -- 'ruff_organize_imports',
+          'ruff_organize_imports',
         },
         json = { 'prettierd', 'prettier', stop_after_first = true },
         -- Conform can also run multiple formatters sequentially
