@@ -113,3 +113,5 @@ bindkey -r "^[l"
 bindkey '^f' autosuggest-accept
 bindkey '^K' history-beginning-search-backward
 bindkey '^J' history-beginning-search-forward
+
+unsetopt AUTO_CD
