@@ -114,6 +114,8 @@ bindkey '^f' autosuggest-accept
 bindkey '^K' history-beginning-search-backward
 bindkey '^J' history-beginning-search-forward
 
+unsetopt AUTO_CD
+
 keep_current_path() {
   printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
 }
