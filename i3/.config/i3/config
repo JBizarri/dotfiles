@@ -222,4 +222,10 @@ client.placeholder      #120b10 #120b10 #F8F8F2 #120b10   #120b10
 
 client.background       #120b10
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
+
+gaps inner 12
+gaps outer 8
+
+smart_gaps on
+smart_borders on
