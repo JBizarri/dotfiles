@@ -3,19 +3,36 @@
 wifi_iface="wlp0s20f3"
 eth_iface="enp6s0f1"
 
-color_iface="$1"
-color_ip="$2"
+icon_color="$1"
+text_color="$2"
 
 wifi_status=$(cat /sys/class/net/$wifi_iface/operstate 2>/dev/null)
 eth_status=$(cat /sys/class/net/$eth_iface/operstate 2>/dev/null)
 
 if [[ "$eth_status" == "up" ]]; then
-    ip=$(ip -o -4 addr show $eth_iface | awk '{print $4}' | cut -d / -f1)
-    echo "%{F$color_iface} $eth_iface: %{F$color_ip}$ip"
+	echo "%{F$icon_color} %{F$text_color}$eth_iface"
 elif [[ "$wifi_status" == "up" ]]; then
-    ssid=$(iw dev $wifi_iface link | grep SSID | cut -d ' ' -f2-)
-    ip=$(ip -o -4 addr show $wifi_iface | awk '{print $4}' | cut -d / -f1)
-    echo "%{F$color_iface} $ssid: %{F$color_ip}$ip"
+	ssid=$(iw dev $wifi_iface link | grep SSID | cut -d ' ' -f2-)
+	wifi_strength=$(iw dev $wifi_iface link | awk '/signal/ { 
+	dbm = $2
+	    percent = 2 * (dbm + 100)
+	    if (percent > 100) percent = 100
+	    if (percent < 0) percent = 0
+	    print percent
+	}')
+
+	if (( wifi_strength <= 20 )); then
+	    icon="󰤯"
+	elif (( wifi_strength <= 40 )); then
+	    icon="󰤟"
+	elif (( wifi_strength <= 60 )); then
+	    icon="󰤢"
+	elif (( wifi_strength <= 80 )); then
+	    icon="󰤥"
+	else
+	    icon="󰤨"
+	fi
+	echo "%{T2}%{F$icon_color}$icon%{O4}%{T1}%{F$text_color}$ssid"
 else
-    echo "%{F$color_iface}⚠️ %{F$color_ip}disconnected"
+	echo "%{T2}%{F$icon_color}%{O4}%{T1}%{F$text_color}disconnected"
 fi
