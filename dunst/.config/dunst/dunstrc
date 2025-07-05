@@ -5,7 +5,7 @@
     height = (0, 600)
     offset = (10, 50)
     scale = 0
-    origin = top-right
+    origin = top-center
     notification_limit = 5
     transparency = 10
     frame_color = "#FF0055"
@@ -37,6 +37,7 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action
     mouse_right_click = close_all
+    script = ~/.config/dunst/log-notifications.sh
 
 [urgency_low]
     background = "#120B10"
