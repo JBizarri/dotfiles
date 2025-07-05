@@ -220,10 +220,10 @@ bindsym $mod+Ctrl+r mode "resize"
 
 # Cyberpunk Theme
 # class                 border  backgr. text    indicator child_border
-client.focused          #ff0055 #ff0055 #F8F8F2 #0dcdcd   #ff0055
+client.focused          #00ffc8 #00ffc8 #F8F8F2 #ff0055   #00ffc8
 client.focused_inactive #120b10 #120b10 #F8F8F2 #120b10   #120b10
 client.unfocused        #120b10 #120b10 #BFBFBF #120b10   #120b10
-client.urgent           #0dcdcd #0dcdcd #F8F8F2 #ff0055   #0dcdcd
+client.urgent           #ff0055 #ff0055 #F8F8F2 #00ffc8   #ff0055
 client.placeholder      #120b10 #120b10 #F8F8F2 #120b10   #120b10
 
 client.background       #120b10

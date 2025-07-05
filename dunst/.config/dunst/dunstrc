@@ -1,9 +1,9 @@
 [global]
     monitor = 0
     follow = mouse
-    width = 300
+    width = (300, 600)
     height = (0, 600)
-    offset = (10, 50)
+    offset = (0, 40)
     scale = 0
     origin = top-center
     notification_limit = 5
@@ -23,36 +23,36 @@
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
-    show_indicators = false
+    show_indicators = true
     icon_position = left
     max_icon_size = 64
     sticky_history = yes
     history_length = 20
-    dmenu = dmenu -p dunst:
+    dmenu = rofi -dmenu -p dunst
     browser = xdg-open
     always_run_script = true
     title = Dunst
     class = Dunst
     corner_radius = 10
-    mouse_left_click = close_current
+    mouse_left_click = do_action, close_current
     mouse_middle_click = do_action
     mouse_right_click = close_all
     script = ~/.config/dunst/log-notifications.sh
 
 [urgency_low]
-    background = "#120B10"
+    background = "#120B10CC"
     foreground = "#EEFFFF"
-    frame_color = "#563466"
+    frame_color = "#FF0055"
     timeout = 5
 
 [urgency_normal]
-    background = "#120B10"
-    foreground = "#FFFC58"
+    background = "#120B10CC"
+    foreground = "#EEFFFF"
     frame_color = "#FF0055"
     timeout = 8
 
 [urgency_critical]
-    background = "#120B10"
-    foreground = "#FF0055"
-    frame_color = "#FF0055"
+    background = "#120B10CC"
+    foreground = "#EEFFFF"
+    frame_color = "#00FFC8"
     timeout = 0
