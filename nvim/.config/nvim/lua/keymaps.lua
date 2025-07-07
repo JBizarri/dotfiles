@@ -59,4 +59,10 @@ vim.keymap.set('n', '<leader>cr', function()
   vim.fn.setreg('+', vim.fn.expand '%')
   print('Copied path: ' .. vim.fn.expand '%')
 end, { desc = '[C]opy [R]elative File Path' })
+
+vim.keymap.set('n', '<leader>tr', function()
+  local new_state = not vim.wo.relativenumber
+  vim.wo.relativenumber = new_state
+  vim.notify('Relative number: ' .. (new_state and 'ON' or 'OFF'))
+end, { desc = '[T]oggle [R]elative number' })
 -- vim: ts=2 sts=2 sw=2 et
