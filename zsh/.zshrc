@@ -114,7 +114,7 @@ export VISUAL=$EDITOR
 
 bindkey -r "^[l"
 bindkey '^f' autosuggest-accept
-bindkey '^K' history-beginning-search-backward
-bindkey '^J' history-beginning-search-forward
+bindkey '^K' up-line-or-beginning-search
+bindkey '^J' down-line-or-beginning-search
 
 unsetopt AUTO_CD

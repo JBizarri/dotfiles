@@ -9,6 +9,9 @@ require 'options'
 -- [[ Keymaps ]]
 require 'keymaps'
 
+-- [[ Pair Programming Mode ]]
+require 'pair-programming'
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy-bootstrap'
 
