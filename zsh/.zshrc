@@ -139,5 +139,3 @@ export PATH="$PATH:/snap/bin"
 
 GPG_TTY=$(tty)
 export GPG_TTY
-
-export PATH="$PATH:/mnt/c/Users/jefferson.bizarri"
