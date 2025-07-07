@@ -65,4 +65,16 @@ vim.keymap.set('n', '<leader>tr', function()
   vim.wo.relativenumber = new_state
   vim.notify('Relative number: ' .. (new_state and 'ON' or 'OFF'))
 end, { desc = '[T]oggle [R]elative number' })
+
+local highlighted = false
+local function toggle_special_key_highlight()
+  if highlighted then
+    vim.cmd 'colorscheme dracula'
+  else
+    vim.api.nvim_set_hl(0, 'SpecialKey', { fg = '#ff5555', bold = true })
+  end
+  highlighted = not highlighted
+end
+
+vim.keymap.set('n', '<leader>th', toggle_special_key_highlight, { desc = '[T]oggle [H]ighlight for special characters' })
 -- vim: ts=2 sts=2 sw=2 et
