@@ -43,6 +43,12 @@ return {
           },
           stdin = true,
         },
+        prettier = {
+          prepend_args = {
+            '--tab-width',
+            '4',
+          },
+        },
       },
       formatters_by_ft = {
         lua = { 'stylua' },
@@ -51,6 +57,7 @@ return {
           'ruff_format',
           -- 'ruff_organize_imports',
         },
+        json = { 'prettierd', 'prettier', stop_after_first = true },
         -- Conform can also run multiple formatters sequentially
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
