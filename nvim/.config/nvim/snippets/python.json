@@ -1,0 +1,10 @@
+{
+	"ipdb": {
+		"prefix": [
+			"ipdb"
+		],
+		"body": [
+			"__import__(\"ipdb\").set_trace()"
+		]
+	}
+}
